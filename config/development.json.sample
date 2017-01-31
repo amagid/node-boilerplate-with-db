@@ -5,5 +5,11 @@
 
     "jwt": {
         "expiresIn": "1h"
+    },
+
+    "db": {
+        "name": "boilerplate",
+        "username": "user1234",
+        "password": "p@55w0rd"
     }
 }

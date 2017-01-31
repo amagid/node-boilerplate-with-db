@@ -4,13 +4,19 @@ const express = require('express');
 const app = express();
 const config = require('../config').get();
 const logger = require('./services/logger');
+const db = require('./services/mysql');
+const sync = require('./models/sync');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 const responsePromise = require('./middlewares/response-promise');
 const morgan = require('morgan');
 const cors = require('cors');
 
-setUpAPI();
+setUpDB().then((connection) => {
+    return sync();
+}).then(() => {
+    setUpAPI();
+});
 
 const server = http.Server(app);
 //const io = socketIO(server);

@@ -4,7 +4,7 @@ const logger = require('./logger');
 
 module.exports = {
     connect,
-    _connection
+    getConnection
 };
 
 let _connection;
@@ -35,4 +35,8 @@ function connect(force = false) {
     } else {
         return Promise.resolve(_connection);
     }
+}
+
+function getConnection() {
+    return _connection;
 }

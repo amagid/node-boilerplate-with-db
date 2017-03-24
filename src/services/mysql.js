@@ -7,7 +7,7 @@ module.exports = {
     _connection
 };
 
-const _connection;
+let _connection;
 
 function connect(force = false) {
     if (!_connection || force) {

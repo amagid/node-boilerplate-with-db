@@ -12,13 +12,14 @@ const responsePromise = require('./middlewares/response-promise');
 const morgan = require('morgan');
 const cors = require('cors');
 
-setUpDB().then((connection) => {
+db.connect().then((connection) => {
     return sync();
 }).then(() => {
     setUpAPI();
 });
 
 const server = http.Server(app);
+//Set up SocketIO server for realtime services
 //const io = socketIO(server);
 
 //setUpSocket();

@@ -2,7 +2,11 @@ node_modules/**
 .vscode/**
 logs/*.log
 logs/exceptions/*.exceptions
+logs/testing/*.log
+logs/testing/exceptions/*.exceptions
 jsconfig.json
 config/keys/jwt*
-config/*.json
+config/development.json
+config/production.json
 EC2/**
+package-lock.json

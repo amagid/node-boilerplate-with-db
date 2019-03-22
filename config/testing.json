@@ -1,0 +1,17 @@
+{
+    "db": {
+        "name": "boilerplate_testing",
+        "username": "boilerplate_server_testing",
+        "password": "*O&hbio4FOSR4o8w4iubs(&H$"
+    },
+
+    "testing": {
+        "credentials": {
+            "template": {
+                "username": "username",
+                "password": "password"
+            }
+        },
+        "baseUrl": "http://localhost:3001/"
+    }
+}

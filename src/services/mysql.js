@@ -14,7 +14,9 @@ function connect(force = false) {
         const db = config.get().db;
         _connection = new Sequelize(db.name, db.username, db.password, {
             host: 'localhost',
+            port: 3306,
             dialect: 'mysql',
+            logging: false,
             pool: {
                 max: 1,
                 min: 0,
@@ -24,11 +26,11 @@ function connect(force = false) {
 
         return _connection.authenticate()
             .then(function (err) {
-                logger.info('Connection has been established successfully.');
+                logger.info({ message: 'Database connection has been established successfully' });
                 return _connection;
             })
             .catch(function (err) {
-                logger.error('Unable to connect to the database:', err);
+                logger.error({ message: 'Unable to connect to the database', status: 500, additionalData: err });
                 throw err;
             });
 

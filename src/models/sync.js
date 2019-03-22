@@ -1,7 +1,7 @@
-const Template = require('./Template');
+const User = require('./User');
 
 module.exports = sync;
 
 function sync() {
-    return Template.sync();
+    return User.sync()
 }

@@ -1,6 +1,6 @@
 {
     "app": {
-        "port": 3001
+        "port": 3000
     },
 
     "jwt": {
@@ -8,8 +8,51 @@
     },
 
     "db": {
-        "name": "boilerplate",
-        "username": "user1234",
-        "password": "p@55w0rd"
+        "name": "<Database Name>",
+        "username": "<Database Username For Server>",
+        "password": "<Database Password For Server>"
+    },
+
+    "password": {
+        "saltRounds": 8
+    },
+
+    "protectedFields": ["password", "pass", "newPass", "newPassConf", "oldPass", "hash", "username", "secret", "signature", "initVector"],
+
+    "mailer": {
+        "apiKey": "<SendGrid API Key>",
+        "subjectPrefix": "[<Your Prefix>] ",
+        "routes": {
+            "userVerification": "auth/verify-token",
+            "passwordReset": "auth/reset-password",
+        },
+        "fromEmail": "someone@someone.com"
+    },
+
+    "urls": {
+        "baseUrl": "http://localhost:3001/",
+        "uiBaseUrl": "http://localhost:3001/"
+    },
+
+    "sms": {
+        "fromPhone": "<Twilio Phone Number>",
+        "sid": "<Twilio SID>",
+        "authToken": "<Twilio Auth Token>",
+        "routes": {
+
+        }
+    },
+
+    "maps": {
+        "apiKey": "<Google Maps API Key>"
+    },
+
+    "mqtt": {
+        "mosca": {
+            "port": 1883
+        },
+        "commands": {
+            
+        }
     }
 }

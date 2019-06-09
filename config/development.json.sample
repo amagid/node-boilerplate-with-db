@@ -3,6 +3,8 @@
         "port": 3000
     },
 
+    "debug": false,
+
     "jwt": {
         "expiresIn": "1h"
     },

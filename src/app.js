@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const socketIO = require('socket.io');
+const debug = require('./services/debug');
 
 const startup = db.connect()
     .then((connection) => {
@@ -22,6 +23,7 @@ const startup = db.connect()
     });
 
 function startServer() {
+    debug(() => console.log('Starting server in DEBUG mode'));
     const server = http.Server(app);
     //Set up SocketIO server for realtime services
     const socketServer = socketIO(server);
